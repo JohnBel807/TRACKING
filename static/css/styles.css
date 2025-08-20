@@ -257,6 +257,15 @@ body {
     .features {
         grid-template-columns: repeat(2, 1fr)
     }
+
+    .hero-media {
+        grid-template-columns: 1fr
+    }
+
+    .hero-media img,
+    .hero-media video {
+        grid-template-columns: 1fr
+    }
 }
 
 @media (max-width: 640px) {
@@ -265,6 +274,15 @@ body {
     }
 
     .form {
+        grid-template-columns: 1fr
+    }
+
+    .hero-media {
+        grid-template-columns: 1fr
+    }
+
+    .hero-media img,
+    .hero-media video {
         grid-template-columns: 1fr
     }
 }
