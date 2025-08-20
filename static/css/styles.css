@@ -280,6 +280,6 @@ body {
 
     .hero-media img,
     .hero-media video {
-        height: auto
+        grid-template-columns: 1fr
     }
 }
