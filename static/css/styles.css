@@ -97,7 +97,8 @@ body {
     height: auto;
     border-radius: 18px;
     border: 1px solid #152033;
-    box-shadow: 0 10px 30px #0008
+    box-shadow: 0 10px 30px #0008;
+    flex: 1 1 100%;
 }
 
 
@@ -257,15 +258,6 @@ body {
     .features {
         grid-template-columns: repeat(2, 1fr)
     }
-
-    .hero-media {
-        grid-template-columns: 1fr
-    }
-
-    .hero-media img,
-    .hero-media video {
-        grid-template-columns: 1fr
-    }
 }
 
 @media (max-width: 640px) {
@@ -274,15 +266,6 @@ body {
     }
 
     .form {
-        grid-template-columns: 1fr
-    }
-
-    .hero-media {
-        grid-template-columns: 1fr
-    }
-
-    .hero-media img,
-    .hero-media video {
         grid-template-columns: 1fr
     }
 }
