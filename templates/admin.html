@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin — MobilityX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="brand">
+      <svg class="logo" width="44" height="44" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0%" stop-color="#00dd00"/>
+            <stop offset="100%" stop-color="#00a300"/>
+          </linearGradient>
+        </defs>
+        <circle cx="128" cy="128" r="112" fill="url(#g1)"/>
+        <path d="M64 144l24-24 32 32 48-64 24 24-72 96z" fill="#0b0f14" />
+      </svg>
+      <span class="brand-name">MobilityX — Admin</span>
+    </div>
+    <nav class="nav">
+      <a href="/">Inicio</a>
+      <a href="/export/excel">Exportar Excel</a>
+      <a href="{{ url_for('logout') }}">Salir</a>
+    </nav>
+  </header>
+
+  <main class="admin">
+    <h1>Leads registrados</h1>
+    <div class="table-wrap">
+      <table id="clientsTable" class="data-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Teléfono</th>
+            <th>Mensaje</th>
+            <th>Creado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Rellenado por JS -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> MobilityX</p>
+    <p>Desarrollado por <a href="https://github.com/johnbeltran">johnbeltran</a></p>
+  </footer>
+
+  <script src="/static/js/main.js" defer></script>
+</body>
+</html>

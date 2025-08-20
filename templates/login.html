@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login — MobilityX</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <style>
+    .login-wrap{max-width:420px;margin:48px auto;background:#0f141b;border:1px solid #152033;border-radius:14px;padding:22px}
+    .login-wrap h1{font-family:Orbitron,sans-serif;margin:0 0 12px}
+    .login-wrap form{display:grid;gap:12px}
+    .login-wrap input{background:#0b1220;border:1px solid #16243a;color:#e6eef2;padding:10px;border-radius:8px}
+    .error{color:#ff9c9c;margin:4px 0 0;min-height:18px}
+    .hint{color:#8fa3b0;font-size:12px;margin-top:4px}
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="brand"><span class="brand-name">MobilityX</span></div>
+    <nav class="nav"><a href="{{ url_for('home') }}">Inicio</a></nav>
+  </header>
+
+  <main class="login-wrap">
+    <h1>Acceso Administrador</h1>
+    <form method="POST" action="{{ url_for('login') }}" novalidate>
+      <label>Usuario
+        <input
+          type="text"
+          name="username"
+          id="username"
+          required
+          autofocus
+          autocomplete="username"
+          autocapitalize="off"
+          spellcheck="false"
+        >
+      </label>
+      <label>Contraseña
+        <input
+          type="password"
+          name="password"
+          id="password"
+          required
+          autocomplete="current-password"
+          autocapitalize="off"
+          spellcheck="false"
+        >
+      </label>
+      <button class="btn-primary" type="submit">Entrar</button>
+      <p class="error" role="alert" aria-live="polite">{{ error or '' }}</p>
+      <p class="hint">
+        Tip: cambia usuario/clave en variables de entorno
+        <code>ADMIN_USER</code> y <code>ADMIN_PASS</code>.
+      </p>
+    </form>
+  </main>
+
+  <footer class="footer"><p>© <span id="year"></span> MobilityX</p></footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
